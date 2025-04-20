@@ -1,0 +1,62 @@
+ADO Boards:
+For connecting Portal AAD to ADO
+Create Sprint, User Stories & tasks
+
+RSG            : To store all resources in one place
+Vnet & Subnets : For Azure Databricks VNet injection
+ADB, cluster   : For Data processing
+ADF            : Used as ETL tool
+ADLS gen2      : Store data/Underlying Tables
+Azure Key Vault: Store secrets that are used in ADF linked services
+Logic app      : For creating Email alerts on pipeline success or Failure
+
+
+containers inside adls gen2 storage: landing,bronze,silver,gold,metadata,log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Azure Databricks
+https://learn.microsoft.com/en-us/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject
+
+ Azure recommends to use 16/ to 24/ CIDR for VNET injection & 26/ for each subnet
+ Contatiner subnet(pvt subnet)
+ Host subnet (Public subnet)
+-The host "public" subnet is used for communication between the Databricks workspace and the Azure services, while the  container "private" subnet is used for communication between the Spark executors and the driver.
+-With Secure cluster connectivity , our cluster inside Databricks workspces wont have a public IP
+-The control plane includes the backend services that Azure Databricks manages in your Azure Databricks account. Notebook commands and many other workspace configurations are stored in the control plane and encrypted at rest.
+contains- Databricks web app, notebooks, jobs & cluster management.
+https://learn.microsoft.com/en-us/azure/databricks/getting-started/overview
+
+Clusters:
+policies: A policy is a tool workspace admins can use to limit a user or group’s compute creation permissions based on a set of policy rules.
+we can even create our own custom policies using below Policy families
+unrestricted:
+personal compute:
+power compute:
+leagacy shared:
+
+-Worker nodes & driver nodes:
+Databricks clusters have a single driver node and multiple worker nodes. The driver node runs the main function and executes various parallel operations on the worker nodes. The worker nodes read and write from and to the data sources. Since each VM machine is the same for worker and driver, the workers can be scaled up based on the vCPU
+
+Table Access control:
+By default, a cluster allows all users to access all data managed by the workspace’s built-in Hive metastore unless table access control is enabled for that cluster. Table access control lets you programmatically grant and revoke access to objects in your workspace’s Hive metastore from Python and SQL.
+
+
+Azure Key Vault:
+HSM-protected Keys: Hardware Security Module (HSM)
+Azure Key Vault Managed HSM (Hardware Security Module) is a fully managed, highly available, single-tenant, standards-compliant cloud service that enables you to safeguard cryptographic keys for your cloud applications.
+
+Purge: remove
+Purge protection can only be enabled once soft delete is enabled for the key vault. When purge protection is on, a vault or an object in the deleted state cannot be purged until the retention period (7-90 days) has passed. 

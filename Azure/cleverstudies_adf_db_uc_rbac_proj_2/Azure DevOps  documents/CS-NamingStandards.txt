@@ -1,0 +1,61 @@
+ResourceGroup:
+CS-Dev-environment-eastus2
+CS-Prod-environment-eastus2
+CS-Test-environment-eastus2
+CS-UAT-environment-eastus2
+
+Vnet & subnet:
+CS-VNET-Dev  10.0.0.0/22
+ADB-PVT-SNET
+10.0.1.0/24 
+ADB-PUBLIC-SNET
+10.0.0.0/24
+
+CS-Vnet-Prod 10.0.0.0/24
+pvt-snet  
+10.0.0.64/26
+pub-snet
+10.0.0.0/26
+
+KeyVault:
+cs-keyvault-dev-nov23
+cs-keyvault-prod-nov23
+
+cskeyvault01
+cs-keyvault-prod01
+
+Azure DataFactory:
+CS-ADF-Dev
+CS-ADF-Prod
+
+Linked Services:
+ls_adls
+ls_adls_for_sftp_source
+ls_AzureKeyVault
+ls_databricks_compute
+ls_databricks_deltalake
+ls_mysql_vimal
+ls_sftp_vimal
+
+SHIR:
+cs-shir
+cs-vmshir
+
+branch:
+cs_collaboration
+/ADF
+
+Azure DataBricks:
+CS-AzureDatabricks-dev
+CS-AzureDatabricks-Prod
+
+Clusters:
+CS Cluster
+
+adlsgen2:
+csadlsgen2storageaccount
+csstorageaccountprod01
+
+Logic Apps:
+CSlogicapp-emailalert-dev
+CSlogicapp-emailalert-prod
