@@ -29,7 +29,7 @@ CS-ADF-Dev
 CS-ADF-Prod
 
 Linked Services:
-ls_adls
+ls_adls    - select IR as self host intergrated runtime created earlier , authorization as SAMI (system assigned managed Identity) , go to adls gen2  (IAM) and provide contributor access to ADF workspace and test connection in LS then create.
 ls_adls_for_sftp_source
 ls_AzureKeyVault
 ls_databricks_compute
