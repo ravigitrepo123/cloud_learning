@@ -45,7 +45,7 @@ branch:
 cs_collaboration
 /ADF
 
-Azure DataBricks:
+Azure DataBricks:  (VNET and ADB workspace must be in same region ) India does not have DS3 cluster so select EAST US
 CS-AzureDatabricks-dev
 CS-AzureDatabricks-Prod
 
