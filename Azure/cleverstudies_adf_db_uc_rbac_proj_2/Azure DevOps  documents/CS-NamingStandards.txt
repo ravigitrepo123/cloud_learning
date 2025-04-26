@@ -7,9 +7,9 @@ CS-UAT-environment-eastus2
 Vnet & subnet:
 CS-VNET-Dev  10.0.0.0/22
 ADB-PVT-SNET
-10.0.1.0/24 
+Starting address and size 10.0.1.0/24 
 ADB-PUBLIC-SNET
-10.0.0.0/24
+Startinmg address and size 10.0.0.0/24
 
 CS-Vnet-Prod 10.0.0.0/24
 pvt-snet  
