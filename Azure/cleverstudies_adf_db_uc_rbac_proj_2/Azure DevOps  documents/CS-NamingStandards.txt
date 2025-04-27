@@ -49,6 +49,32 @@ Azure DataBricks:  (VNET and ADB workspace must be in same region ) India does n
 CS-AzureDatabricks-dev
 CS-AzureDatabricks-Prod
 
+we need spn to establish connection bw databricks and adls gen2, go to microsoft entra id in search > manage >app registrations > new name it spn_adb_to_adls, in the spn search for cert and secrets create new and copy secret value(used for spark config)
+go to storage account adl gen2 , create IAM contriubutor role with user managed with member as spn_.. , 
+
+spark configuration
+fs.azure.account.auth.type.<storage-account>.dfs.core.windows.net OAuth
+fs.azure.account.oauth.provider.type.<storage-account>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
+fs.azure.account.oauth2.client.id.<storage-account>.dfs.core.windows.net <application-id>
+fs.azure.account.oauth2.client.secret.<storage-account>.dfs.core.windows.net {{secrets/<secret-scope>/<service-credential-key>}}
+fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.core.windows.net https://login.microsoftonline.com/<directory-id>/oauth2/token
+
+adls gen2 storage acct name, 
+sapplication id : microsfot entra id > app registrations > all applications >  your spn > Application (client) ID
+secrtescope : SPN secret value 
+TenantID : microsfot entra id > app registrations > all applications >  your spn > Directory (tenant) ID
+
+fs.azure.account.auth.type.csadlsgen2strgacctravi.dfs.core.windows.net OAuth
+fs.azure.account.oauth.provider.type.csadlsgen2strgacctravi.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
+fs.azure.account.oauth2.client.id.csadlsgen2strgacctravi.dfs.core.windows.net 82dba409-d76e-4a6f-8909-762e839ab573
+fs.azure.account.oauth2.client.secret.csadlsgen2strgacctravi.dfs.core.windows.net tJc8Q~s.v4hFLMsjguIHeLGbhlDpqK4Bauy63df1
+fs.azure.account.oauth2.client.endpoint.csadlsgen2strgacctravi.dfs.core.windows.net https://login.microsoftonline.com/6ce7b461-aee6-44c5-81cb-8d3e9ad72926/oauth2/token
+
+Instead of using secrets directly in spark config like above in dbricks. Use secretsscope
+
+this is initial part of cluster url https://adb-2594519364601239.19.azuredatabricks.net/ append #secrets/createScope and open it https://adb-2594519364601239.19.azuredatabricks.net/#secrets/createScope
+cs_create_scope  provide key vault uri https://cs-keyvault-dev-25apr.vault.azure.net/
+
 Clusters:
 CS Cluster
 
