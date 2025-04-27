@@ -74,6 +74,13 @@ Instead of using secrets directly in spark config like above in dbricks. Use sec
 
 this is initial part of cluster url https://adb-2594519364601239.19.azuredatabricks.net/ append #secrets/createScope and open it https://adb-2594519364601239.19.azuredatabricks.net/#secrets/createScope
 cs_create_scope  provide key vault uri https://cs-keyvault-dev-25apr.vault.azure.net/
+also provide resource id , get it from key vault > settings > properties > resource id
+
+now create secret spn-secret in key vault, for spn secret value.
+{{secrets/cs_create_scope/spn-secret}}  paste this in place of secret value in spark config 
+
+similarly create secret spn-clientid for clientid in keyvault 
+{{secrets/cs_create_scope/spn-clientid}}
 
 Clusters:
 CS Cluster
