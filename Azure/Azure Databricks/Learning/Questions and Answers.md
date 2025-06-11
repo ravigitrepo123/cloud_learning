@@ -1,7 +1,8 @@
 
 
-
+- [Databricks Architecture](#databricks-architecture)
 - [Types of Clusters in Azure databricks](#types-of-clusters-in-azure-databricks)
+
 
 
 ## Databricks Architecture 
