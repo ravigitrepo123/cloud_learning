@@ -29,6 +29,7 @@ Cluster is accessible only when a job is started and terminates after job is end
 
 
 ##  How are ADLS gen2 is integrated and used in ADB
-Create Mount points (eg: /mount/adlsgen2_test) using ADLS acccess key , which points to ADLS gen2 containeter.
+In production Best approach is using Service Principal 
+In Dev Create Mount points (eg: /mount/adlsgen2_test) using ADLS acccess key , which points to ADLS gen2 containeter. as it is easy to use shortcut paths
 
 
