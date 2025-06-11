@@ -1,7 +1,7 @@
 
 
 
-- [Types of Clusters in Azure databricks](#Typesof Clusters in Azure databricks)
+- [Types of Clusters in Azure databricks](#types-of-clusters-in-azure-databricks)
 
 
 
