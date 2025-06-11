@@ -31,5 +31,7 @@ Cluster is accessible only when a job is started and terminates after job is end
 ##  How are ADLS gen2 is integrated and used in ADB
 In production Best approach is using Service Principal 
 In Dev Create Mount points (eg: /mount/adlsgen2_test) using ADLS acccess key , which points to ADLS gen2 containeter. as it is easy to use shortcut paths
+https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/Azure%20Databricks/Learning/Resources/ADLS%20Integration%20with%20Databricks.docx
+
 
 
