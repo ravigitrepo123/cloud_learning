@@ -3,7 +3,7 @@
 - [Databricks Architecture](#databricks-architecture)
 - [Types of Clusters in Azure databricks](#types-of-clusters-in-azure-databricks)
 - [How are Azure dbx notebooks saved and deployed in real world](#how-are-azure-databrick-notebooks-are-saved-and-deployed-in-real-world)
-- [ How are ADLS gen2 is integrated and used in ADB](#how-are-adls-gen2-is-integrated-and-used-in-adb)
+- [ How is ADLS gen2 is integrated and used in ADB](#how-is-adls-gen2-is-integrated-and-used-in-adb)
 - [ CI/CD for ADB, migration from Dev to Test and PROD]()
 - [How do you call ADB notebks in ADF]()
 - [How to address performance issues in ADBx]()
