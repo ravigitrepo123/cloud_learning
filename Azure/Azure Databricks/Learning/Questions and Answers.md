@@ -6,8 +6,8 @@
 - [ How are ADLS gen2 is integrated and used in ADB](#how-are-adls-gen2-is-integrated-and-used-in-adb)
 - [ CI/CD for ADB, migration from Dev to Test and PROD]()
 - [How do you call ADB notebks in ADF]()
-- [How to address performance issues in ADBx]
-- [ sample ADB project structure]
+- [How to address performance issues in ADBx]()
+- [sample ADB project structure]()
 ## Databricks Architecture 
 Databricks operates out of a control plane and a data plane.
 
