@@ -5,7 +5,8 @@
 
 
 
-##Types of Clusters in Azure databricks
+## Types of Clusters in Azure databricks
+
 All purpose clusters/Interactive Cluster:
 All developers can interact with this cluster generally used in development environments
 
