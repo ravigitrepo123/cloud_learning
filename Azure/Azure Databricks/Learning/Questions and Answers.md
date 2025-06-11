@@ -31,7 +31,7 @@ Cluster is accessible only when a job is started and terminates after job is end
 ## How are Azure databrick notebooks are saved and deployed in real world
 
 
-##  How are ADLS gen2 is integrated and used in ADB
+##  How is ADLS gen2 is integrated and used in ADB
 In production Best approach is using Service Principal 
 
 In Dev Create Mount points (eg: /mount/adlsgen2_test) using ADLS acccess key , which points to ADLS gen2 containeter. as it is easy to use shortcut paths
