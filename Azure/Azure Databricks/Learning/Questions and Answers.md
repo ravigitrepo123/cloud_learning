@@ -20,11 +20,14 @@ Your Azure account manages the **data plane**,(compute plane new terminology) an
 
 ## Types of Clusters in Azure databricks
 
-All purpose clusters/Interactive Cluster:
+General purpose clusters/Interactive Cluster:
 All developers can interact with this cluster generally used in development environments
 
 Job cluster :
 Cluster is accessible only when a job is started and terminates after job is ended.generally used in prod
+
+Memory optimized for not ETL/ELT process
+Storage Optimized clusters for Shuffle intensive work
 
 
 
