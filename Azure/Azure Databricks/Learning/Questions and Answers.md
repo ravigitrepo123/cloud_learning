@@ -30,7 +30,7 @@ Cluster is accessible only when a job is started and terminates after job is end
 Memory optimized for not ETL/ELT process
 Storage Optimized clusters for Shuffle intensive work
 
-# How do you call a notebook from another notebook
+## How do you call a notebook from another notebook
 child_notebook
 dbutils.widgets.text("param1", "")
 param1 = dbutils.widgets.get("param1")
