@@ -32,6 +32,7 @@ Storage Optimized clusters for Shuffle intensive work
 
 ## How do you call a notebook from another notebook
 child_notebook
+
 dbutils.widgets.text("param1", "")
 param1 = dbutils.widgets.get("param1")
 
