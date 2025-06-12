@@ -31,6 +31,8 @@ Memory optimized for not ETL/ELT process
 Storage Optimized clusters for Shuffle intensive work
 
 ## How do you call a notebook from another notebook
+run dbutils.notebook.run calls another notebook with timelimit to run and paramters
+
 child_notebook
 
 dbutils.widgets.text("param1", "")
@@ -40,10 +42,12 @@ Do some logic with param1...
 dbutils.notebook.exit("Processed in Environment: " + param1)
 
 parent notebook 
-....
-result = dbutils.notebook.**run**("/Users/ravi/child_notebook", 60, {"param1": "Dev"})
-...
 
+....
+
+result = dbutils.notebook.**run**("/Users/ravi/child_notebook", 60, {"param1": "Dev"})
+
+...
 
 ## How are Azure databrick notebooks are saved and deployed in real world
 
