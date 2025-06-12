@@ -6,6 +6,7 @@
 - [ How is ADLS gen2 is integrated and used in ADB](#how-is-adls-gen2-is-integrated-and-used-in-adb)
 - [ CI/CD for ADB, migration from Dev to Test and PROD]()
 - [How do you call ADB notebks in ADF]()
+- [How do you call a notebook from another notebook]()
 - [How to address performance issues in ADBx]()
 - [sample ADB project structure]()
 ## Databricks Architecture 
@@ -29,6 +30,18 @@ Cluster is accessible only when a job is started and terminates after job is end
 Memory optimized for not ETL/ELT process
 Storage Optimized clusters for Shuffle intensive work
 
+# How do you call a notebook from another notebook
+child_notebook
+dbutils.widgets.text("param1", "")
+param1 = dbutils.widgets.get("param1")
+
+Do some logic with param1...
+dbutils.notebook.exit("Processed in Environment: " + param1)
+
+parent notebook 
+....
+result = dbutils.notebook.**run**("/Users/ravi/child_notebook", 60, {"param1": "Dev"})
+...
 
 
 ## How are Azure databrick notebooks are saved and deployed in real world
