@@ -32,8 +32,12 @@
   - [ADLS Gen2 Creation](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
   - [Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory)
   - [Databricks Workspace](https://learn.microsoft.com/en-us/azure/databricks/getting-started/)
+  - [Key vault creation](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
+  - [Logic App creation](https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-example-consumption-workflow)
 
----
+- **[45 min]** User Story 3: Creating Containers
+- (landing,raw,intermediate,curated,metadata,log,archive) inside ADLS gen2 Storage account
+
 
 ## Sprint-2: Establishing the Connectivity (Infra Setup)
 
