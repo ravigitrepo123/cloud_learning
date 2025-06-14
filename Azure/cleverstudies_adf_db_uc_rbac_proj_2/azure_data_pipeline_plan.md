@@ -55,9 +55,9 @@
 
 - **[10 min]** User Story 3: Create folder structure in Databricks,setting up input metadata, log tables in databricks hive_metastore by running the notebooks
    Add image to dbricks folder
-   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/log_table_creation_scripts.py
-   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/metadata_tables_creation_scripts.py
-   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_insertion/metadata_tables_insert_scripts_till_raw.py
+   [Create hivemetastore db, dev_raw schema, log_record_tbl table](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/log_table_creation_scripts.py)
+  [create metadata_schema in hivemetastore db , tbl_source_control , tbl_parameters in that schema](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/metadata_tables_creation_scripts.py)
+  [Insert data in metadata_schema.tbl_source_control , metadata_schema.tbl_parameters](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_insertion/metadata_tables_insert_scripts_till_raw.py)
    
   
 - **[30 min]** User Story 4: Create ADF pipeline (GCP to Landing), with logging , parameterization
