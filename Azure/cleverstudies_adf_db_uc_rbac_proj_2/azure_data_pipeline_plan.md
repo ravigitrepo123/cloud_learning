@@ -2,18 +2,6 @@
 
 ---
 
-## Key Vault & Logic App Setup
-
-- **Key Vault Creation:**  
-  [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
-
-- **Logic App Creation:**  
-  [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-example-consumption-workflow)
-
-- **[15 min]** User Story 3: Create required containers (landing, raw, intermediate, curated, metadata, log, archive) inside storage account
-
----
-
 ## Sprint-1: Resource Creation for Dev (Infra Setup)
 
 - **[15 min]** User Story 1: Creating resource groups or environments in Azure  
