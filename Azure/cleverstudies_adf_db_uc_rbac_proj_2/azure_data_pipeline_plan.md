@@ -73,11 +73,12 @@
 
 ADF Pipeline:
 - `1a_pl_dim_gcp_to_azure_full_load`
+- 
 Databricks notebook py scripts called
+
 [Water column update after copy success ](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/databricks_notebooks/dbx_update_watermark_column.py)
 
-[called at failures and success to log into log table]
-(https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/databricks_notebooks/log_record_tbl_insert.py)
+[called at failures and success to log into log table](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/databricks_notebooks/log_record_tbl_insert.py)
 
 ---
 
