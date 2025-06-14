@@ -53,7 +53,13 @@
   - Task 2: [ds_output_csv] CSV output dataset
   - Task 3: [ds_metadata_adb_deltalake] ADB Delta Lake input dataset for metadata lookup
 
-- **[10 min]** User Story 3: Create folder structure in Databricks,setting up input metadata, log tables in databrickshive_metastore by running the notebooks
+- **[10 min]** User Story 3: Create folder structure in Databricks,setting up input metadata, log tables in databricks hive_metastore by running the notebooks
+   Add image to dbricks folder
+   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/log_table_creation_scripts.py
+   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/metadata_tables_creation_scripts.py
+   https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_insertion/metadata_tables_insert_scripts_till_raw.py
+   
+  
 - **[30 min]** User Story 4: Create ADF pipeline (GCP to Landing), with logging , parameterization
 
 **Checks:**
