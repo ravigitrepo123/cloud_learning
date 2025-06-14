@@ -32,11 +32,11 @@
 - **[10 min]** Intro: Integration Runtime, Linked Services, Dataset
 - **[15 min]** User Story 1: Create self-hosted SHIR in ADF
 - **[30 min]** User Story 2: Creating linked services for:
-  - Task 1: Key Vault
-  - Task 2: ADLS Gen2
-  - Task 3: ADB
+  - Task 1: Key Vault  ls_azure_keyVault
+  - Task 2: ADLS Gen2   ls_adls
+  - Task 3: ADB  ls_databricks_compute , ls_databricks_delta_lake
 
-- **[20 min]** User Story 3: Create linked services for GCP cloud storage
+- **[20 min]** User Story 3: Create linked services for GCP cloud storage ls_gcp
 - **[10 min]** User Story 4: Create secrets for GCP linked service in Azure Key Vault
 - **[15 min]** User Story 5: Create SPN for ADB-ADLS connectivity
 - **[15 min]** User Story 6: Set up Spark Configuration for cluster
