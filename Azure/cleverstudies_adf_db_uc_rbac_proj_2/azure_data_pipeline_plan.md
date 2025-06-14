@@ -78,6 +78,7 @@ Databricks notebook py scripts called
 
 [called at failures and success to log into log table]
 (https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/databricks_notebooks/log_record_tbl_insert.py)
+
 ---
 
 ## Sprint-4: Data Enrichment & Transformation using Databricks
