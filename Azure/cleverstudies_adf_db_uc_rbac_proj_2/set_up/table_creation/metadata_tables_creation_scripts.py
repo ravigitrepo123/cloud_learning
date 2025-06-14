@@ -1,4 +1,4 @@
-# Databricks notebook source
+# Databricks notebook source - creates metadata_schema , tbl_source_control , tbl_parameters
 dbutils.widgets.text("storage_account_name", "")
 storage_account_name = dbutils.widgets.get("storage_account_name")
 
