@@ -1,0 +1,195 @@
+# Azure Data Engineering Project Plan
+
+---
+
+## Key Vault & Logic App Setup
+
+- **Key Vault Creation:**  
+  [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
+
+- **Logic App Creation:**  
+  [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-example-consumption-workflow)
+
+- **[15 min]** User Story 3: Create required containers (landing, raw, intermediate, curated, metadata, log, archive) inside storage account
+
+---
+
+## Sprint-1: Resource Creation for Dev (Infra Setup)
+
+- **[15 min]** User Story 1: Creating resource groups or environments in Azure  
+  [Resource Group Guide](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
+
+- **[45 min]** User Story 2: Creating Azure resources
+  - Task 1: Create VNet and two subnets (Private + Public) for ADB VNet ingestion
+  - Task 2: Create Azure Databricks workspace + cluster
+  - Task 3: Create Azure Data Factory
+  - Task 4: Configure Azure Git Version Control
+  - Task 5: Create Storage account (ADLS Gen2)
+  - Task 6: Create Azure Key Vault
+  - Task 7: Create Logic App
+
+  Resources:
+  - [ADLS Gen2 Creation](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
+  - [Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory)
+  - [Databricks Workspace](https://learn.microsoft.com/en-us/azure/databricks/getting-started/)
+
+---
+
+## Sprint-2: Establishing the Connectivity (Infra Setup)
+
+- **[10 min]** Intro: Integration Runtime, Linked Services, Dataset
+- **[15 min]** User Story 1: Create self-hosted SHIR in ADF
+- **[30 min]** User Story 2: Creating linked services for:
+  - Task 1: Key Vault
+  - Task 2: ADLS Gen2
+  - Task 3: ADB
+
+- **[20 min]** User Story 3: Create linked services for GCP cloud storage
+- **[10 min]** User Story 4: Create secrets for GCP linked service in Azure Key Vault
+- **[15 min]** User Story 5: Create SPN for ADB-ADLS connectivity
+- **[15 min]** User Story 6: Set up Spark Configuration for cluster
+- **[10 min]** User Story 7: Create Secret scope
+
+---
+
+## Sprint-3: GCP Source Data Ingestion
+
+- **[15 min]** Sprint review discussion
+- **[10 min]** User Story 1: Upload datasets into GCP bucket
+- **[30 min]** User Story 2: Create datasets in ADF
+  - Task 1: GCP input dataset
+  - Task 2: CSV output dataset
+  - Task 3: ADB Delta Lake input dataset
+
+- **[10 min]** User Story 3: Create folder structure in Databricks, run notebooks to set up metadata tables
+- **[30 min]** User Story 4: Create ADF pipeline (GCP to Landing)
+
+**Checks:**
+- File availability
+- File name (Telecom)
+- File format / extension (.csv)
+
+Links:
+- `1a_pl_dim_gcp_to_azure_full_load`
+
+---
+
+## Sprint-4: Data Enrichment & Transformation using Databricks
+
+- **[30 min]** User Story 1: Create ADF pipeline (GCP to Landing) with logging and parameterization
+
+**Checks:**
+- File availability
+- File name (Telecom)
+- File format / extension (.csv)
+
+Links:
+- `2a_pl_fact_gcp_to_azure_delta_load`
+
+- **[15 min]** User Story 2:
+  - Task 1: Import raw table scripts from notebooks
+  - Task 2: Create tables in raw schema
+
+- **[20 min]** Cleaning Activities:
+  - Bad Records Handling | Permissive
+  - Derived columns: load_id, last_inserted_dttm_azure, last_updated_dttm_gcp
+
+- **[30 min]** User Story 3: Create ADF pipeline (Landing to Raw) [Full Load]
+  - `1b_pl_dim_sub_landing_to_raw_full_load`
+
+- **[30 min]** User Story 4: Create ADF pipeline (Landing to Raw) [Delta Load]
+  - `2b_pl_sub_fact_landing_to_raw_delta_load`
+
+---
+
+## Sprint-5: Develop Business Logic with Archiving, Logging
+
+- **[15 min]** Sprint review
+- **[20 min]** User Story 1: Archive source files after raw layer ingestion
+- **[15 min]** Cleaning Activities:
+  - Merge or Upsert
+  - Incremental Load
+  - Full Load
+
+- **[10 min]** User Story 2:
+  - Task 1: Import intermediate table scripts
+  - Task 2: Create tables in intermediate schema
+
+- **[30 min]** User Story 3: Create ADF pipeline (Raw to Intermediate)
+  - `1c_pl_dim_raw_to_intermediate`
+
+- **[30 min]** User Story 4: Create ADF pipeline (Raw to Intermediate)
+
+---
+
+## Sprint-6: Triggers, Alerts, Unit Testing
+
+- **[10 min]** Sprint Review
+
+**Business Logic:**
+- Joins
+- Merge
+- CTE
+
+- **[30 min]** User Story 1: Create ADF pipeline (Intermediate to Curated)
+  - `3_pl_intermediate_to_curated`
+
+- **[20 min]** User Story 2: Configure Logic App for email alerts
+- **[30 min]** Email Alerting (4 templates)
+  - Template 1: Count mismatch
+  - Template 2: ADF PL in progress
+  - Template 3: ADF PL error
+  - Template 4: ADF PL completion
+
+- **[15 min]** User Story 3: Create triggers, run ADF pipeline via loop
+- **[15 min]** User Story 4: Unit testing and end-to-end ADF PL execution
+
+---
+
+## Sprint-7: RBAC and Unity Catalog
+
+- **[15 min]** Sprint-6 Review
+- **[10 min]** Intro to RBAC
+
+### User Story 1: Create AAD Groups in Entra ID
+- Task 1: Add users to AAD groups
+
+### User Story 2: Create SCIM Connector App
+- Task 1: Add AAD groups to SCIM connector
+- Task 2: Verify provisioning
+
+### User Story 3: Add AAD groups to Databricks workspace
+### User Story 4: Assign roles to AAD groups
+
+- **[15 min]** Intro to Unity Catalog
+
+### User Story 5: Create schemas in Unity Catalog
+### User Story 6: Create storage credentials
+- Task 1: Access connector
+- Task 2: External credentials
+- Task 3: External locations
+
+### User Story 7: Sync Hive metastore schemas to Unity Catalog
+### User Story 8: Grant UC & cluster permissions to AAD groups
+
+---
+
+## Sprint-8: RBAC UC Pipeline & Prod Deployment
+
+- **[10 min]** Sprint-7 Review
+- **User Story 1:** ADF PL for RBAC and UC
+- **User Story 2:** Databricks table lineage
+- **User Story 3:** Triggers
+- **[20 min]** User Story 4: Create prod env (resource groups, etc.)
+- **[20 min]** User Story 5: Create SHIR for prod
+- **[20 min]** User Story 6: Create and execute DevOps ADO pipeline for Databricks
+
+---
+
+## Sprint-9: Q&A and Backlogs
+
+- **[10 min]** Sprint Review
+- **[30 min]** User Story 1: Create and execute DevOps ADO pipeline for ADF
+- **[15 min]** Project Call Sheet
+- **[30 min]** Project Q&A
+
