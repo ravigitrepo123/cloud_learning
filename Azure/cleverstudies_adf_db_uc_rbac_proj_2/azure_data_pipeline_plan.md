@@ -25,7 +25,7 @@
 
 - **[45 min]** User Story 3: Creating Containers
 - (landing,raw,intermediate,curated,metadata,log,archive) inside ADLS gen2 Storage account
-
+---
 
 ## Sprint-2: Establishing the Connectivity (Infra Setup)
 
@@ -93,7 +93,7 @@ Links:
 
 - **[30 min]** User Story 4: Create ADF pipeline (Landing to Raw) [Delta Load]
   - `2b_pl_sub_fact_landing_to_raw_delta_load`
-
+---
 
 ## Sprint-5: Develop Business Logic with Archiving, Logging
 
@@ -167,7 +167,7 @@ Links:
 ### User Story 8: Grant UC & cluster permissions to AAD groups
 
 
-
+---
 
 ## Sprint-8: RBAC UC Pipeline & Prod Deployment
 
