@@ -95,11 +95,11 @@ Databricks notebook py scripts called
   - Remove nulls  at record level
   - Duplicate checks
     
-- **[30 min]** User Story 3: Create ADF pipeline (Landing to Raw) [Full Load]
+- **[30 min]** User Story 2: Create ADF pipeline (Landing to Raw) [Full Load]
   - `1b_pl_dim_sub_landing_to_raw_full_load`
-  This is called inside the 1a_pl_dim_gcp_to_azure_full_load pipeline, it fetches file and loads into raw schema tables
+  This is called inside the 1a_pl_dim_gcp_to_azure_full_load pipeline, it fetches file from parent pipeline and cleans using dfs and loads into raw schema tables
 
-- **[30 min]** User Story 2: Create ADF pipeline (GCP to Landing) with logging and parameterization
+- **[30 min]** User Story 3: Create ADF pipeline for fact files (GCP to Landing) with logging and parameterization
 
 **Checks:**
 - File availability
@@ -111,6 +111,7 @@ Links:
 
 - **[30 min]** User Story 4: Create ADF pipeline (Landing to Raw) [Delta Load]
   - `2b_pl_sub_fact_landing_to_raw_delta_load`
+  This is called inside the 2a_pl_fact_gcp_to_azure_delta_load pipeline, fetches file from parent pipeline and usig dataframes cleans it and loads into fact tables in raw schema
 ---
 
 ## Sprint-5: Develop Business Logic with Archiving, Logging
