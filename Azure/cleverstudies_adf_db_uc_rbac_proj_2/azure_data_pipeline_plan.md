@@ -84,19 +84,10 @@ Databricks notebook py scripts called
 
 ## Sprint-4: Data Enrichment & Transformation using Databricks
 
-- **[30 min]** User Story 1: Create ADF pipeline (GCP to Landing) with logging and parameterization
-
-**Checks:**
-- File availability
-- File name (Telecom)
-- File format / extension (.csv)
-
-Links:
-- `2a_pl_fact_gcp_to_azure_delta_load`
-
-- **[15 min]** User Story 2:
-  - Task 1: Import raw table scripts from notebooks
-  - Task 2: Create tables in raw schema
+- **[15 min]** User Story 1:
+  - Task 1: Import raw table scripts from notebooks   [crt table .py script](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_creation/raw_tables_creation_scripts.py)
+             [Insert into tabs .py](https://github.com/ravigitrepo123/cloud_learning/blob/main/Azure/cleverstudies_adf_db_uc_rbac_proj_2/set_up/table_insertion/metadata_tables_insert_scripts_till_raw.py)
+  - Task 2: Create tables in raw schema by executing task 1.
 
 - **[20 min]** Cleaning Activities:
   - Bad Records Handling | Permissive
@@ -106,6 +97,17 @@ Links:
     
 - **[30 min]** User Story 3: Create ADF pipeline (Landing to Raw) [Full Load]
   - `1b_pl_dim_sub_landing_to_raw_full_load`
+  This is called inside the 1a_pl_dim_gcp_to_azure_full_load pipeline, it fetches file and loads into raw schema tables
+
+- **[30 min]** User Story 2: Create ADF pipeline (GCP to Landing) with logging and parameterization
+
+**Checks:**
+- File availability
+- File name (Telecom)
+- File format / extension (.csv)
+
+Links:
+- `2a_pl_fact_gcp_to_azure_delta_load`
 
 - **[30 min]** User Story 4: Create ADF pipeline (Landing to Raw) [Delta Load]
   - `2b_pl_sub_fact_landing_to_raw_delta_load`
